@@ -1,0 +1,3 @@
+{% for name, value in __SELF__.tags() %}
+    <link rel="{{ name }}" href="{% if __SELF__.property('escape') == false %}{{ value|raw }}{% else %}{{ value }}{% endif %}">
+{% endfor %}
