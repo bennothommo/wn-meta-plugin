@@ -24,6 +24,14 @@ return [
                 'title' => 'Escape tag values?',
                 'description' => 'Escape the link tag values using PHP\'s htmlentities() function'
             ],
+        ],
+        'jsonLdList' => [
+            'name' => 'JSON-LD List',
+            'description' => 'Injects the JSON-LD blocks into the page.',
+            'escape' => [
+                'title' => 'Escape JSON-LD content?',
+                'description' => 'Escape the JSON-LD content using PHP\'s htmlentities() function'
+            ],
         ]
     ]
 ];

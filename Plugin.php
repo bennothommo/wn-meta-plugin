@@ -19,7 +19,8 @@ class Plugin extends PluginBase
     {
         return [
             'BennoThommo\Meta\Components\MetaList' => 'metaList',
-            'BennoThommo\Meta\Components\LinkList' => 'linkList'
+            'BennoThommo\Meta\Components\LinkList' => 'linkList',
+            'BennoThommo\Meta\Components\JsonLdList' => 'jsonLdList'
         ];
     }
 }

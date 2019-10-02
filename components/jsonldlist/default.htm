@@ -1,0 +1,5 @@
+{% for value in __SELF__.blocks() %}
+    <script type="application/ld+json">
+        {% if __SELF__.property('escape') == false %}{{ value|raw }}{% else %}{{ value }}{% endif %}">
+    </script>
+{% endfor %}
