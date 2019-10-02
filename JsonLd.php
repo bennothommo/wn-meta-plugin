@@ -26,7 +26,7 @@ class JsonLd
             if ($errorCode !== JSON_ERROR_NONE) {
                 throw new ApplicationException(
                     'The data provided for JSON-LD block "' . $name . '" is invalid JSON: ' .
-                    $this->getMessage($errorCode)
+                    self::getMessage($errorCode)
                 );
             }
 
@@ -39,7 +39,7 @@ class JsonLd
         return self::$blocks;
     }
 
-    protected function getMessage(int $errorCode)
+    protected static function getMessage(int $errorCode)
     {
         switch ($errorCode) {
             case JSON_ERROR_DEPTH:
