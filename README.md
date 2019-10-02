@@ -1,14 +1,14 @@
 # Meta plugin
 
-Provides an easy interface to allow October CMS plugins to insert HTML `<meta>` and `<link>` tags into a layout or page. The plugin provides two helper classes to populate the meta and link tags, and a component to inject them into an October CMS layout, partial or page file.
+Provides an easy interface to allow October CMS plugins to insert HTML `<meta>` and `<link>` tags, as well as JSON-LD blocks into a layout or page. The plugin provides three helper classes to populate the meta and link tags or JSON-LD blocks, and a component each to inject them into an October CMS layout, partial or page file.
 
 ## Usage
 
 ### For theme developers
 
-#### Meta tags
+Three components are provided to inject the meta and link tags or JSON-LD blocks into your theme - **metaList**, **linkList** and **jsonLdList**.
 
-Two components are provided to inject the meta and link tags into your theme - **metaList** and **linkList**.
+#### Meta tags
 
 Add the **Meta -> Meta List** component to your page and add the following line where you would like the meta tags to be inserted. This should preferably be inside the `<head>` tag.
 
@@ -45,11 +45,31 @@ An option is also provided with the component:
 
 - **Escape tag values?**: If ticked (default), the values inserted into the `href` attribute will be escaped using `htmlentities`. If this messes up your content, you can untick this to insert the raw content instead.
 
+#### JSON-LD blocks
+
+Add the **Meta -> JSON-LD List** component to your page and add the following line where you would like the JSON-LD blocks to be inserted. As above, this should also preferably be inside the `<head>` tag, beneath all `<meta>` and `<link>` tags.
+
+```
+{% component 'jsonLdList' %}
+```
+
+JSON-LD blocks will be generated in the following structure:
+
+```
+<script type="application/ld+json">
+    (value)
+</script>
+```
+
+An option is also provided with the component:
+
+- **Escape JSON-LD content?**: If ticked (default), the values inserted into the JSON-LD content blocks will be escaped using `htmlentities`. If this messes up your content - especially in the case of HTML content, you can untick this to insert the raw content instead.
+
 ---
 
 ### For plugin developers
 
-If you wish to use this plugin to provide meta and link tags on sites that your plugin is installed on, you can use the `\BennoThommo\Meta\Meta` and `\BennoThommo\Meta\Link` helper classes in your plugin.
+If you wish to use this plugin to provide meta and link tags or JSON-LD block content on sites that your plugin is installed on, you can use the `\BennoThommo\Meta\Meta`, `\BennoThommo\Meta\Link` and `\BennoThommo\Meta\JsonLd` helper classes in your plugin.
 
 These classes can be used up until the point in which the components above are rendered in October CMS.
 
@@ -72,6 +92,8 @@ You can also add several meta tags at once:
 ]);
 ```
 
+Note that only one value can be used per `name`. If the same name is used in a more recent call to the helper, the given value will overwrite any previous values.
+
 #### Link tags
 
 To add a Link tag, use the following line:
@@ -88,5 +110,28 @@ You can also add several link tags at once:
 \BennoThommo\Meta\Link::set([
     'name1' => 'value1',
     'name2' => 'value2'
+]);
+```
+
+Note that only one value can be used per `name`. If the same name is used in a more recent call to the helper, the given value will overwrite any previous values.
+
+#### JSON-LD blocks
+
+To add a JSON-LD block, use the following line:
+
+```
+\BennoThommo\Meta\JsonLd::set('name', '{key: value}')
+```
+
+where `name` is the name of the JSON-LD block and `value` is the JSON-encoded content you wish to use in the block.
+
+All provided values will be checked to ensure they are valid JSON - if a value provided is not valid JSON content, an `ApplicationException` will be thrown.
+
+You can also add several JSON-LD blocks at once:
+
+```
+\BennoThommo\Meta\JsonLd::set([
+    'name1' => '{key1: value1}',
+    'name2' => '{key2: value2}'
 ]);
 ```
