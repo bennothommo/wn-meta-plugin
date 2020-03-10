@@ -1,5 +1,5 @@
 {
-    "name": "bennothommo/oc-plugin-meta",
+    "name": "bennothommo/oc-meta-plugin",
     "description": "Provides an easy interface to insert HTML meta and link tags into an October CMS layout or page.",
     "type": "october-plugin",
     "keywords": ["october", "plugin", "cms", "meta", "link", "html"],
