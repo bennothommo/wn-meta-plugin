@@ -1,4 +1,5 @@
-1.0.3: Publish plugin on Composer. See https://packagist.org/packages/bennothommo/oc-plugin-meta for more info.
-1.0.2: Add support for JSON-LD content blocks
-1.0.1: Rename meta content attribute
 1.0.0: !!! Initial version of the plugin
+1.0.1: Rename meta content attribute
+1.0.2: Add support for JSON-LD content blocks
+1.0.3: Publish plugin on Composer. See https://packagist.org/packages/bennothommo/oc-plugin-meta for more info.
+1.0.4: Remove phantom closing tag in JSON-LD blocks
