@@ -14,5 +14,8 @@
     "require": {
         "php": ">=7.0.8",
         "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "meta"
     }
 }
