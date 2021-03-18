@@ -3,3 +3,4 @@
 1.0.2: Add support for JSON-LD content blocks
 1.0.3: Publish plugin on Composer. See https://packagist.org/packages/bennothommo/oc-plugin-meta for more info.
 1.0.4: Remove phantom closing tag in JSON-LD blocks
+1.1.0: Re-brand for Winter CMS.
