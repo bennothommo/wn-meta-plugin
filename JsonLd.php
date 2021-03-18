@@ -1,7 +1,7 @@
 <?php
 namespace BennoThommo\Meta;
 
-use October\Rain\Exception\ApplicationException;
+use Winter\Storm\Exception\ApplicationException;
 
 class JsonLd
 {

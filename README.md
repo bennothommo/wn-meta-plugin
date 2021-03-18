@@ -1,6 +1,6 @@
 # Meta plugin
 
-Provides an easy interface to allow October CMS plugins to insert HTML `<meta>` and `<link>` tags, as well as JSON-LD blocks into a layout or page. The plugin provides three helper classes to populate the meta and link tags or JSON-LD blocks, and a component each to inject them into an October CMS layout, partial or page file.
+Provides an easy interface to allow [Winter CMS](https://wintercms.com) plugins to insert HTML `<meta>` and `<link>` tags, as well as JSON-LD blocks into a layout or page. The plugin provides three helper classes to populate the meta and link tags or JSON-LD blocks, and a component each to inject them into a Winter CMS layout, partial or page file.
 
 ## Usage
 
@@ -24,7 +24,7 @@ Meta tags will be generated in the following structure:
 
 Two options are also provided with the component:
 
-- **Include page meta?**: If ticked (default), the meta title and description fields provided by October CMS will be also be included in the generated meta tags.
+- **Include page meta?**: If ticked (default), the meta title and description fields provided by Winter CMS will be also be included in the generated meta tags.
 - **Escape tag values?**: If ticked (default), the values inserted into the `content` attribute will be escaped using `htmlentities`. If this messes up your content, you can untick this to insert the raw content instead.
 
 #### Link tags
@@ -71,7 +71,7 @@ An option is also provided with the component:
 
 If you wish to use this plugin to provide meta and link tags or JSON-LD block content on sites that your plugin is installed on, you can use the `\BennoThommo\Meta\Meta`, `\BennoThommo\Meta\Link` and `\BennoThommo\Meta\JsonLd` helper classes in your plugin.
 
-These classes can be used up until the point in which the components above are rendered in October CMS.
+These classes can be used up until the point in which the components above are rendered in Winter CMS.
 
 #### Meta tags
 

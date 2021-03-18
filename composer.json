@@ -1,8 +1,8 @@
 {
-    "name": "bennothommo/oc-meta-plugin",
-    "description": "Provides an easy interface to insert HTML meta and link tags into an October CMS layout or page.",
-    "type": "october-plugin",
-    "keywords": ["october", "plugin", "cms", "meta", "link", "html"],
+    "name": "bennothommo/wn-meta-plugin",
+    "description": "Provides an easy interface to insert HTML meta and link tags into a Winter CMS layout or page.",
+    "type": "winter-plugin",
+    "keywords": ["winter cms", "plugin", "cms", "meta", "link", "html"],
     "license": "MIT",
     "authors": [
         {

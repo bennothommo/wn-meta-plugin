@@ -14,7 +14,7 @@ return [
             ],
             'includePageMeta' => [
                 'title' => 'Include page meta?',
-                'description' => 'Automatically inserts meta tags for the page meta values provided in October CMS'
+                'description' => 'Automatically inserts meta tags for the page meta values provided in Winter CMS'
             ]
         ],
         'linkList' => [
